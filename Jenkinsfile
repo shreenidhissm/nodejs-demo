@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t avinashbasoor12/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t avinashbasoorbs/nodeapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push avinashbasoor12/nodeapp:$BUILD_NUMBER'
+                sh 'docker push avinashbasoorbs/nodeapp:$BUILD_NUMBER'
             }
         }
 }
