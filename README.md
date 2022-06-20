@@ -1,2 +1,2 @@
 # nodeapp
-Docker build
+Docker build -t
