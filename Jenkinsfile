@@ -4,7 +4,7 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('Dockercred')
     }
     stages { 
-        stage('SCM Checkout') {
+        stagesss('SCM Checkout') {
             steps{
             git 'https://github.com/avinashbasoor12/nodejs-demo.git'
             }
