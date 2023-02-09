@@ -6,3 +6,4 @@ docke ps -a
 docker prue
 docker -s
 docker
+docker
