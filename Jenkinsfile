@@ -1,18 +1,18 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('Dockercred')
+    DOCKERHUB_CREDENTIALS = credentials('docker_login')
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/avinashbasoor12/nodejs-demo.git'
+            git 'https://github.com/shreenidhissm/nodejs-demo.git'
             }
         }
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t avinashbasoorbs/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t shreenidhism/nodeapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push avinashbasoorbs/nodeapp:$BUILD_NUMBER'
+                sh 'docker push shreenidhism/nodeapp:$BUILD_NUMBER'
             }
         }
 }
