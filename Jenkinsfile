@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t shreenidhism/nodeapp:$BUILD_NUMBER -f Dockerfile'
+                sh 'docker build -t shreenidhism/nodeapp:$BUILD_NUMBER -f /var/lib/jenkins/workspace/pipeline-project/nodejs-pipeline/Dockerfile'
             }
         }
         stage('login to dockerhub') {
